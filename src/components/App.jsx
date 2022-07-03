@@ -26,11 +26,7 @@ export class App extends Component {
     }
   };
 
-  handleSubmit = ({ name, number }, { resetForm }) => {
-    if (this.checkDuplicates(name)) {
-      return;
-    }
-
+  addContact = ({ name, number }) => {
     const newContact = {
       id: nanoid(),
       name,
@@ -42,8 +38,6 @@ export class App extends Component {
         contacts: [...prevState.contacts, newContact],
       };
     });
-
-    resetForm();
   };
 
   handleFilter = evt => {
@@ -86,7 +80,10 @@ export class App extends Component {
       >
         <Box mb={6} p={4} bg="secondaryBg" borderRadius="normal">
           <h1>Phonebook</h1>
-          <ContactForm onSubmit={this.handleSubmit} />
+          <ContactForm
+            onSubmit={this.addContact}
+            checkDuplicates={this.checkDuplicates}
+          />
           <Filter value={this.state.filter} onChange={this.handleFilter} />
         </Box>
 

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Form = styled.form`
+  margin-top: ${p => p.theme.space[3]};
+`;
+
 export const Label = styled.label`
   font-weight: ${p => p.theme.fontWeights.bold};
   font-size: ${p => p.theme.fontSizes.l};
@@ -10,24 +14,19 @@ export const FieldWrapper = styled.div`
   justify-content: space-between;
   max-width: 350px;
   padding-top: ${p => p.theme.space[3]};
-  padding-bottom: ${p => p.theme.space[3]};
-  margin-top: ${p => p.theme.space[3]};
+  padding-bottom: ${p => p.theme.space[4]};
+`;
 
-  & > input {
-    width: 200px;
-    padding-right: ${p => p.theme.space[4]};
-    padding-left: ${p => p.theme.space[4]};
-    font-size: ${p => p.theme.fontSizes.m};
-    font-weight: ${p => p.theme.fontWeights.bold};
-    background-color: inherit;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid;
-  }
-
-  & + span {
-    font-size: ${p => p.theme.fontSizes.sm};
-  }
+export const Input = styled.input`
+  width: 200px;
+  padding-right: ${p => p.theme.space[4]};
+  padding-left: ${p => p.theme.space[4]};
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  background-color: inherit;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
 `;
 
 export const Button = styled.button`
